@@ -6,7 +6,7 @@ ________________________________________________________________________________
 
 # Assignment 1: Develop a Proof-of-Concept version of an application that is querying a database to provide an output to the user.
 
-Welcome to our first assignment for Module 6: Data Engineering and MLOps, in the Business Data Science master program at Aalborg University. This assignment is a collaboration between Raiyan M.D and Kasper R. Haurum.
+Welcome to our first assignment for Module 6: Data Engineering and MLOps, for the business data science master program at Aalborg University. This assignment is a collaboration between Raiyan M.D and Kasper R. Haurum.
 
 Our primary objective for this assignment is to develop a proof-of-concept application that queries a database to provide an output to the user. We chose to work with an SQL database, specifically SQLite, and demonstrated the implementation of a semantic search application using SQLite, Pandas, Sentence Transformers, and Gradio.
 
