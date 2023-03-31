@@ -19,3 +19,17 @@ Once the database was set up and the embeddings were generated, we implemented a
 Finally, we installed Gradio and set up a Gradio interface for user interaction with the semantic search application. This interface allows users to search for similar documents within the 20 newsgroups dataset.
 
 Throughout this assignment, we have successfully built a proof-of-concept application capable of performing semantic search and retrieving relevant documents based on user input. This project showcases our ability to work with various data engineering tools and techniques, thus showcasing a proof-of-concept application follows the logic of our course at AAU.
+_________________________________________________________________________________________________________________________________________________________________________
+
+# Assignment 2: Our primary objective for this assignment is to develop either Apache Spark or Polars to perform the complete EDA report. We went for both unified analytics engines for large-scale data processing. In order to test the strength of the understanding.
+
+#Polars
+In the first stage, we loaded the HR dataset into the platform and perform basic exploratory data analysis (EDA) to understand the structure of the data. This includes checking the dimensions of the dataset, examining the data types, and identifying missing values. Added to that we also fill in the missing values using Polars functionality in the first step.
+
+In the second stage, we filter the data to include only the relevant observations. We did it by removing missing values and filtering based on certain criteria and conditions that are specific to our dataset. We filtered out HR_subset to focus on the specific part of the data and minimize memory loss. From that subset, we dig down further to find the attrition level at a different stage.
+
+In the third stage, we aggregate the data to obtain summary statistics and metrics. We ran different aggregations using functions such as filter(), groupby(), etc. Added to that, we calculated the mean, median, or mode of certain variables to gain a better understanding of the data.
+
+In the fourth stage, we join the employee satisfaction data with HR dataset to perform a more complex analysis. Here we merged two tables using a common key. Which is Employee ID. Through Employee ID, we tried to find out employees’ satisfaction levels in different categories. This gave us the opportunity to perform a more complex analysis.
+
+Finally, We visualized the data plotly.express. Plotly express is a Polars’ visualization tool. We used it to identify the different variables and understand it in a better way.
