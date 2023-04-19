@@ -60,3 +60,17 @@ In the final steps, the data is visualized using bar charts to display the top 1
 For each category, the top 10 entries are selected, ordered by the number of trips in descending order. These entries are then converted to Pandas dataframes and plotted as bar charts. The x-axis represents the place, username, or country, while the y-axis represents the number of trips. The bar charts provide a clear visual representation of the most popular places, countries, and users on the Nomadlist platform.
 
 In conclusion, the coding used in this assignment demonstrates high-quality data processing and analysis using Apache Spark. It efficiently performs EDA, filters relevant observations, calculates summary statistics, and visualizes the results. By leveraging the power of Spark and its groupBy, agg, and orderBy functions, the code effectively analyzes the Nomadlist dataset to provide insights into popular destinations and frequent travelers.
+
+_________________________________________________________________________________________________________________________________________________________________________
+
+# Assignment 3: TRACKING AND MANAGING PROJECT WITH MLFLOW
+
+At the first phase of the project importing important libraries and loading the HR dataset is the main key. Here, HR dataset from our previous project will be used for Elastic net and it will be transfered to MLflow to track and monitor the project. Where the optimal and best case model can be identified.
+
+In the second phase of the project there will be some EDA. Where data will be resized and reshaped for the machine learning purpose. The HR dataset have some missing values and some unsupported conditions for machine learning project. In this section managing data through EDA will be the key.
+
+In the third phase of the project, here, Elasticnet is selected from scikit-learn. To perform Elasticnet at forst some evaluation metrics has been set. Where RMSE, MAE and R2 (R square test) will be the priority. Then data has been spilited for train and test focusing on the attrition in the data set. Where yes is 1 and No is 0. Added to that for the prediction MLflow has started to run. Where in the backend API MLflow will start to store the prediction of the model with the accuracy level and the result. In the final stage of the MLflow, logging parameter and metrics is the final task. Based on which MLflow API will perform the chart related analysis. After performing the code, all the model will shift to MLflow. In the next step evaluation of every training model based on different parameter will give different RMSE, MAE and R2 score. The operator of the model then can identify which model is the best depending on the different parameter that has been used in the model. In this project 5 different set of training model has been evaluated.
+
+NGROK has been used to visualize the MLflow UI. Through NGROK the local host will able to showcase the different model through MLflow UI. Here 5000 Mlflow UI port has been used in this project.
+
+In Conclusion this project demonstrate the tracking and managing project with MLflow. Either it can be done with google drive or SQLite to store the structured and unstructured data of the project. Added to that managing the project and registering the model also can be done through MLflow.
