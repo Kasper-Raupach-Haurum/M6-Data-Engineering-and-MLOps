@@ -36,3 +36,27 @@ In the third stage, we aggregate the data to obtain summary statistics and metri
 In the fourth stage, we join the employee satisfaction data with HR dataset to perform a more complex analysis. Here we merged two tables using a common key. Which is Employee ID. Through Employee ID, we tried to find out employees’ satisfaction levels in different categories. This gave us the opportunity to perform a more complex analysis.
 
 Finally, We visualized the data plotly.express. Plotly express is a Polars’ visualization tool. We used it to identify the different variables and understand it in a better way.
+
+##Apache Spark
+
+For the Apache Spark we used the "Nomadlist" dataset. This dataset was used in the first semester within the M1 - Applied Data Science and Machine Learning module. We select this to start to perform the Exploratory Data Analysis (EDA) and data operations. 
+ 
+To begin, we start by installing PySpark and creating a Spark session named "TripsEDA." It then downloads the dataset from a GitHub repository using the urllib.request library. The dataset is loaded into a Spark dataframe, and basic EDA is performed to understand its structure, including dimensions, data types, and missing values.
+
+To filter relevant observations, the data is filtered based on three conditions: ensuring the trip end date is greater than the start date, and that both latitude and longitude values are not null. This process removes trips with negative durations and those missing location data points.
+
+Next, the data is grouped by country, place, and username to identify the most popular destinations for digital nomads and the most frequent travelers. The code leverages Spark's groupBy and agg functions to count the number of trips per country, place, and user.
+
+In Step 3, the data is aggregated to obtain summary statistics and metrics for trips per country, place, and username. The number of trips for each category is displayed, and to make the data cleaner and more understandable, the minimum, maximum, and average number of trips are calculated for each category.
+
+For countries, the most popular one received 7,337 digital nomads, while the least popular had only one visitor. On average, countries receive 181 visitors. Summary statistics are also calculated for trips per place and trips per username.
+
+Next, we display the top 10 countries, places, and usernames with the highest number of trips. The data is ordered by the number of trips in descending order, and the top 10 entries are shown without truncation.
+
+Similarly, the bottom 10 countries, places, and usernames with the least number of trips are displayed. The data is arranged based on the number of trips in increasing order, and the top 10 entries are shown without truncation. This analysis helps to identify popular destinations and frequent travelers, as well as less-visited locations and less-active users on the Nomadlist platform.
+
+In the final steps, the data is visualized using bar charts to display the top 10 most visited places, countries, and usernames. First, the necessary libraries are imported, and the data is grouped by place, username, and country, counting the number of trips in each group.
+
+For each category, the top 10 entries are selected, ordered by the number of trips in descending order. These entries are then converted to Pandas dataframes and plotted as bar charts. The x-axis represents the place, username, or country, while the y-axis represents the number of trips. The bar charts provide a clear visual representation of the most popular places, countries, and users on the Nomadlist platform.
+
+In conclusion, the coding used in this assignment demonstrates high-quality data processing and analysis using Apache Spark. It efficiently performs EDA, filters relevant observations, calculates summary statistics, and visualizes the results. By leveraging the power of Spark and its groupBy, agg, and orderBy functions, the code effectively analyzes the Nomadlist dataset to provide insights into popular destinations and frequent travelers.
