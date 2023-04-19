@@ -25,7 +25,7 @@ ________________________________________________________________________________
 
 Our primary objective for this assignment is to develop either Apache Spark or Polars to perform the complete EDA report. We went for both unified analytics engines for large-scale data processing. In order to test the strength of the understanding.
 
-#Polars
+## Polars
 
 In the first stage, we loaded the HR dataset into the platform and perform basic exploratory data analysis (EDA) to understand the structure of the data. This includes checking the dimensions of the dataset, examining the data types, and identifying missing values. Added to that we also fill in the missing values using Polars functionality in the first step.
 
@@ -37,7 +37,7 @@ In the fourth stage, we join the employee satisfaction data with HR dataset to p
 
 Finally, We visualized the data plotly.express. Plotly express is a Polars’ visualization tool. We used it to identify the different variables and understand it in a better way.
 
-##Apache Spark
+## Apache Spark
 
 For the Apache Spark we used the "Nomadlist" dataset. This dataset was used in the first semester within the M1 - Applied Data Science and Machine Learning module. We select this to start to perform the Exploratory Data Analysis (EDA) and data operations. 
  
