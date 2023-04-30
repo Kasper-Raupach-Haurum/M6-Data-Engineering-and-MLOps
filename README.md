@@ -124,11 +124,11 @@ To further enhance the portability and ease of deployment for the machine learni
 
 In this project, a Dockerfile is created to define the necessary instructions to build the Docker image. The Dockerfile contains the following steps:
 
--The base image is set to Python 3.7, which provides the required Python runtime environment.
--The application files are copied from the local directory to the /app directory within the container.
--The working directory inside the container is set to /app.
--The requirements.txt file is used to install the necessary packages via pip, ensuring that all dependencies are available within the container.
--The container's exposed port is set to 8080, allowing communication with the Streamlit web interface.
--Finally, the ENTRYPOINT command specifies how the container should be executed. In this case, the command runs the Streamlit application (app.py) on port 8080 and allows it to accept connections from any IP address (0.0.0.0).
+* The base image is set to Python 3.7, which provides the required Python runtime environment.
+* The application files are copied from the local directory to the /app directory within the container.
+* The working directory inside the container is set to /app.
+* The requirements.txt file is used to install the necessary packages via pip, ensuring that all dependencies are available within the container.
+* The container's exposed port is set to 8080, allowing communication with the Streamlit web interface.
+* Finally, the ENTRYPOINT command specifies how the container should be executed. In this case, the command runs the Streamlit application (app.py) on port 8080 and allows it to accept connections from any IP address (0.0.0.0).
 
 By following these instructions in the Dockerfile, the application, SQLite database, MLflow, and Streamlit interface are all encapsulated within a Docker container. This ensures that they function correctly and consistently, regardless of the host environment. Once the Docker image is built, it can be easily shared, deployed, and run on any system with Docker installed.
