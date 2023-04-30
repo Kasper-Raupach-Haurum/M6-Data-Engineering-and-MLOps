@@ -131,3 +131,5 @@ In this project, a Dockerfile is created to define the necessary instructions to
 * Finally, the ENTRYPOINT command specifies how the container should be executed. In this case, the command runs the Streamlit application (app.py) on port 8080 and allows it to accept connections from any IP address (0.0.0.0).
 
 By following these instructions in the Dockerfile, the application, SQLite database, MLflow, and Streamlit interface are all encapsulated within a Docker container. This ensures that they function correctly and consistently, regardless of the host environment. Once the Docker image is built, it can be easily shared, deployed, and run on any system with Docker installed.
+
+After successfully dockerizing the machine learning application, the next step is to upload the Docker image to Docker Hub. Docker Hub is a cloud-based registry service that allows you to share and distribute Docker images. By uploading the app to Docker Hub, it becomes easily accessible for others to download and run the containerized application.
