@@ -82,6 +82,53 @@ In this last assignment for Module 6: Data Engineering and MLOps, We, Raiyan M.D
 
 To meet the objectives of the assignment, we picked a suitable machine learning model, which is ran by the HR-dataset from our 1st semester, that is specifically an ElasticNet regression model. We then successfully integrate MLflow for tracking and managing machine learning experiments by logging hyperparameters, metrics, and artifacts of the experiments in MLflow. Additionally, we then save structured and unstructured information related to the trained model in SQLite within MLflow.
 
+The results presented showcase the performance of the ElasticNet regression model for different combinations of alpha and l1_ratio hyperparameters. The performance is evaluated using three metrics: Root Mean Squared Error (RMSE), Mean Absolute Error (MAE), and R-squared (R2).
 
+For alpha = 0.5 and l1_ratio = 0.5, the model yields:
 
+RMSE: 0.36593
+MAE: 0.26888
+R2: 0.02966
+For alpha = 0.5 and l1_ratio = 0.4, the model yields:
 
+RMSE: 0.35482
+MAE: 0.26236
+R2: 0.00893
+For alpha = 0.5 and l1_ratio = 0.3, the model yields:
+
+RMSE: 0.36319
+MAE: 0.26633
+R2: 0.03157
+For alpha = 0.5 and l1_ratio = 0.2, the model yields:
+
+RMSE: 0.36605
+MAE: 0.26781
+R2: 0.05331
+For alpha = 0.5 and l1_ratio = 0.1, the model yields:
+
+RMSE: 0.33680
+MAE: 0.25141
+R2: 0.06528
+
+The results reveal that the model with alpha = 0.5 and l1_ratio = 0.1 has the lowest RMSE and MAE, and the highest R2 value. This combination of hyperparameters provides the best performance among the tested configurations.
+
+The next step is to create a user-friendly interface for the machine learning application using Streamlit, a popular open-source framework. The interface is designed to allow users to input data and obtain predictions from the trained model easily. The main application file is named "app.py," which contains the necessary code to create and run the Streamlit interface.
+
+The code in "app.py" first imports necessary libraries such as NumPy, pandas, and Streamlit. It then loads the pre-trained model from a pickle file. The predict_HR function is defined to take in three parameters: Mean Absolute Error (mae), Root Mean Squared Error (rmse), and R-squared (r2), and returns the prediction from the trained model.
+
+The main function is responsible for creating the web interface using Streamlit functions. It starts by setting the title of the web application and then adds a styled header using HTML. The user is prompted to enter the values for mae, rmse, and r2 through text input fields. When the "Predict" button is clicked, the predict_HR function is called, and the prediction result is displayed on the interface. An "About" button is also provided to display additional information about the application.
+
+To ensure that the application runs smoothly and has all the necessary dependencies, a "requirements.txt" file is created. This file lists the required packages and their respective versions to be installed, such as mlflow, numpy, scikit-learn, and streamlit. By specifying the dependencies in this file, it becomes easier to manage the application's environment and ensure compatibility across different systems.
+
+To further enhance the portability and ease of deployment for the machine learning application, it is dockerized. Dockerization involves creating a lightweight, standalone, and executable software package called a Docker container. This container encapsulates the application, its dependencies, and system tools, ensuring that it runs consistently across different environments.
+
+In this project, a Dockerfile is created to define the necessary instructions to build the Docker image. The Dockerfile contains the following steps:
+
+-The base image is set to Python 3.7, which provides the required Python runtime environment.
+-The application files are copied from the local directory to the /app directory within the container.
+-The working directory inside the container is set to /app.
+-The requirements.txt file is used to install the necessary packages via pip, ensuring that all dependencies are available within the container.
+-The container's exposed port is set to 8080, allowing communication with the Streamlit web interface.
+-Finally, the ENTRYPOINT command specifies how the container should be executed. In this case, the command runs the Streamlit application (app.py) on port 8080 and allows it to accept connections from any IP address (0.0.0.0).
+
+By following these instructions in the Dockerfile, the application, SQLite database, MLflow, and Streamlit interface are all encapsulated within a Docker container. This ensures that they function correctly and consistently, regardless of the host environment. Once the Docker image is built, it can be easily shared, deployed, and run on any system with Docker installed.
