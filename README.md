@@ -74,3 +74,14 @@ In the third phase of the project, here, Elasticnet is selected from scikit-lear
 NGROK has been used to visualize the MLflow UI. Through NGROK the local host will able to showcase the different model through MLflow UI. Here 5000 Mlflow UI port has been used in this project.
 
 In Conclusion this project demonstrate the tracking and managing project with MLflow. Either it can be done with google drive or SQLite to store the structured and unstructured data of the project. Added to that managing the project and registering the model also can be done through MLflow.
+_________________________________________________________________________________________________________________________________________________________________________
+
+# Assignment 4: Dockerizing an MLflow-based ML App with SQLite and Streamlit Interface
+
+In this last assignment for Module 6: Data Engineering and MLOps, We, Raiyan M.D and Kasper R. Haurum collaborate to enhance a previous machine learning project by incorporating MLflow for experiment tracking and management. The assignment also involves integrating SQLite for storing structured and unstructured information related to the trained model. As part of the task, we have developed a user-friendly interface for the machine learning application using Streamlit, with the option to create a custom three-layer app. Finally, we dockerize the application and upload it to Docker Hub.
+
+To meet the objectives of the assignment, we picked a suitable machine learning model, which is ran by the HR-dataset from our 1st semester, that is specifically an ElasticNet regression model. We then successfully integrate MLflow for tracking and managing machine learning experiments by logging hyperparameters, metrics, and artifacts of the experiments in MLflow. Additionally, we then save structured and unstructured information related to the trained model in SQLite within MLflow.
+
+
+
+
