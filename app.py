@@ -8,7 +8,7 @@ from PIL import Image
 pickle_in = open("model.pkl","rb")
 model=pickle.load(pickle_in)
 
-
+#Incase this goes wrong, insert the following back: mae,rmse,r2, however here will be the four elements in the streamlit overlay. Age, Attrition, DistranceFromHome,MonthlyIncome
 def predict_HR(mae,rmse,r2):
     
     """Let's Authenticate the Attrition 
@@ -38,7 +38,7 @@ def predict_HR(mae,rmse,r2):
     return prediction
 
 
-
+#Check line 55, it went from 0-18, to 0-2. If anything goes wrong, change it back.
 def main():
     st.title("HR Attrition")
     html_temp = """
@@ -52,7 +52,7 @@ def main():
     curtosis = st.text_input("r2","Type Here")
     result=""
     if st.button("Predict"):
-        result=predict_HR(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18)
+        result=predict_HR(0, 1, 2)
     st.success('The output is {}'.format(result))
     if st.button("About"):
         st.text("Lets LEarn")
