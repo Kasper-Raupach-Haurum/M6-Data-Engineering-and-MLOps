@@ -52,7 +52,7 @@ def main():
     curtosis = st.text_input("r2","Type Here")
     result=""
     if st.button("Predict"):
-        result=predict_HR()
+        result=predict_HR(0, 1)
     st.success('The output is {}'.format(result))
     if st.button("About"):
         st.text("Lets LEarn")
