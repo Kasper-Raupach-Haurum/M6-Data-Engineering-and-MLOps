@@ -14,9 +14,10 @@ def predict_hr_attrition(age, distance_from_home, monthly_income, percent_salary
     """
     Predict HR attrition based on input parameters.
     """
-    prediction = model.predict_proba([[age, distance_from_home, monthly_income, percent_salary_hike, total_working_years]])
-    attrition_probability = prediction[0][1] * 100
+    prediction = model.predict([[age, distance_from_home, monthly_income, percent_salary_hike, total_working_years]])
+    attrition_probability = prediction[0] * 100  # Change this line to use the `predict` method
     return attrition_probability
+
 
 
 def main():
