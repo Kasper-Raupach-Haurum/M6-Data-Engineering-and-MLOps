@@ -1,5 +1,5 @@
 import streamlit as st
-from sklearn.externals import joblib
+import joblib
 
 def load_model():
     """Load the trained model for predicting HR attrition."""
