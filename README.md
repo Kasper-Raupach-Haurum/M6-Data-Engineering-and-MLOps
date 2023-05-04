@@ -84,30 +84,31 @@ To meet the objectives of the assignment, we picked a suitable machine learning 
 
 The results presented showcase the performance of the ElasticNet regression model for different combinations of alpha and l1_ratio hyperparameters. The performance is evaluated using three metrics: Root Mean Squared Error (RMSE), Mean Absolute Error (MAE), and R-squared (R2).
 
-* For alpha = 0.5 and l1_ratio = 0.5, the model yields:
-RMSE: 0.36593
-MAE: 0.26888
-R2: 0.02966
+* For alpha = 0.5 and l1_ratio = 0.5, the model yields: 
+RMSE: 0.36080 
+MAE: 0.26414 
+R2: 0.03142
 
 * For alpha = 0.5 and l1_ratio = 0.4, the model yields:
-RMSE: 0.35482
-MAE: 0.26236
-R2: 0.00893
+RMSE: 0.37266 
+MAE: 0.27102 
+R2: 0.01880
 
 * For alpha = 0.5 and l1_ratio = 0.3, the model yields:
-RMSE: 0.36319
-MAE: 0.26633
-R2: 0.03157
+RMSE: 0.37057 
+MAE: 0.26794 
+R2: 0.02977
 
 * For alpha = 0.5 and l1_ratio = 0.2, the model yields:
-RMSE: 0.36605
-MAE: 0.26781
-R2: 0.05331
+RMSE: 0.36138 
+MAE: 0.25902 
+R2: 0.02832
 
 * For alpha = 0.5 and l1_ratio = 0.1, the model yields:
-RMSE: 0.33680
-MAE: 0.25141
-R2: 0.06528
+RMSE: 0.38051 
+MAE: 0.27588 
+R2: 0.02466
+
 
 The results reveal that the model with alpha = 0.5 and l1_ratio = 0.1 has the lowest RMSE and MAE, and the highest R2 value. This combination of hyperparameters provides the best performance among the tested configurations.
 
