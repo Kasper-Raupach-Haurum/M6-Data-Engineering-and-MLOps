@@ -123,13 +123,42 @@ To further enhance the portability and ease of deployment for the machine learni
 
 In this project, a Dockerfile is created to define the necessary instructions to build the Docker image. The Dockerfile contains the following steps:
 
-* The base image is set to Python 3.7, which provides the required Python runtime environment.
+* The base image is set to Python 3.9, which provides the required Python runtime environment.
+* The package list is updated, and sudo is installed for any additional package management needs within the container.
 * The application files are copied from the local directory to the /app directory within the container.
 * The working directory inside the container is set to /app.
 * The requirements.txt file is used to install the necessary packages via pip, ensuring that all dependencies are available within the container.
-* The container's exposed port is set to 8080, allowing communication with the Streamlit web interface.
-* Finally, the ENTRYPOINT command specifies how the container should be executed. In this case, the command runs the Streamlit application (app.py) on port 8080 and allows it to accept connections from any IP address (0.0.0.0).
+* The rest of the application code is copied into the /app directory in the container.
+* The main script, M6_Data_Engineering_and_MLOps_Assignment_4_appfile.py, is made executable.
+* The container's exposed port is set to 8501, allowing communication with the Streamlit web interface.
+* Finally, the ENTRYPOINT command specifies how the container should be executed. In this case, the command runs the Streamlit application (M6_Data_Engineering_and_MLOps_Assignment_4_appfile.py) on port 8501 and allows it to accept connections from any IP address (0.0.0.0).
 
 By following these instructions in the Dockerfile, the application, SQLite database, MLflow, and Streamlit interface are all encapsulated within a Docker container. This ensures that they function correctly and consistently, regardless of the host environment. Once the Docker image is built, it can be easily shared, deployed, and run on any system with Docker installed.
 
-After successfully dockerizing the machine learning application, the next step is to upload the Docker image to Docker Hub. Docker Hub is a cloud-based registry service that allows you to share and distribute Docker images. By uploading the app to Docker Hub, it becomes easily accessible for others to download and run the containerized application.
+To upload my dockerized app to Docker Hub and provide instructions for running the app from the Docker Hub repository based on the provided Dockerfile, I followed these steps:
+
+First, I ensured I had a Docker Hub account. If I didn't have one, I would sign up at https://hub.docker.com/signup.
+
+Then, I opened the terminal or command prompt and logged in to my Docker Hub account using the following command:
+
+
+docker login --username=raiyan1012 --password=<my_dockerhub_password>
+
+I replaced <my_dockerhub_password> with my actual Docker Hub password.
+
+Next, I built my Docker image using the provided Dockerfile. I navigated to the directory containing the Dockerfile and ran the following command:
+
+docker build -t raiyan1012/dockerfile:v1.0.0 .
+
+After successfully building the image, I pushed it to my Docker Hub repository with this command:
+
+docker push raiyan1012/dockerfile:v1.0.0
+
+To run the app from the Docker Hub repository, I provided these instructions:
+First, execute the following command on any machine with Docker installed:
+
+docker run -p 8501:8501 raiyan1012/dockerfile:v1.0.0
+
+Once the app is running, open a web browser and navigate to http://localhost:8501 to access the Streamlit app.
+
+By following these steps, I successfully uploaded my dockerized app to Docker Hub using the username raiyan1012 and provided instructions for running the app from the Docker Hub repository.
