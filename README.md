@@ -134,6 +134,8 @@ In this project, a Dockerfile is created to define the necessary instructions to
 * The container's exposed port is set to 8501, allowing communication with the Streamlit web interface.
 * Finally, the ENTRYPOINT command specifies how the container should be executed. In this case, the command runs the Streamlit application (M6_Data_Engineering_and_MLOps_Assignment_4_appfile.py) on port 8501 and allows it to accept connections from any IP address (0.0.0.0).
 
+## Docker
+
 By following these instructions in the Dockerfile, the application, SQLite database, MLflow, and Streamlit interface are all encapsulated within a Docker container. This ensures that they function correctly and consistently, regardless of the host environment. Once the Docker image is built, it can be easily shared, deployed, and run on any system with Docker installed.
 
 To upload my dockerized app to Docker Hub and provide instructions for running the app from the Docker Hub repository based on the provided Dockerfile, I followed these steps:
@@ -163,3 +165,23 @@ docker run -p 8501:8501 raiyan1012/dockerfile:v1.0.0
 Once the app is running, open a web browser and navigate to http://localhost:8501 to access the Streamlit app.
 
 By following these steps, I successfully uploaded my dockerized app to Docker Hub using the username raiyan1012 and provided instructions for running the app from the Docker Hub repository.
+
+## Dockerhub repo
+
+The Dockerfile for the application can be found at the following link: https://hub.docker.com/r/raiyan1012/dockerfile. This repository on Docker Hub contains the necessary files and instructions to create a Docker image for the application. The Docker image simplifies deployment, ensuring that the application runs consistently across different environments.
+
+Documentation
+
+Repository: The Docker Hub repository, raiyan1012/dockerfile, is where the Dockerfile and other necessary files are stored to create the Docker image for the application.
+
+Base Image: The base image used in the Dockerfile is Python 3.9. It provides the required Python runtime environment for the application.
+
+Working Directory: The working directory inside the container is set to /app. This is where the application code and requirements.txt file are copied.
+
+Dependencies: The requirements.txt file is used to install the necessary packages via pip. This ensures that all dependencies are available within the container.
+
+Application Code: The application code is copied from the local directory to the /app directory within the container. The script is made executable using the chmod command.
+
+Exposed Port: The container's exposed port is set to 8501, allowing communication with the Streamlit web interface.
+
+ENTRYPOINT: The ENTRYPOINT command specifies how the container should be executed. In this case, the command runs the Streamlit application (M6_Data_Engineering_and_MLOps_Assignment_4_appfile.py) on port 8501 and allows it to accept connections from any IP address (0.0.0.0).
