@@ -7,6 +7,7 @@ from PIL import Image
 def load_model():
     pickle_in = open("model.pkl","rb")
     model=pickle.load(pickle_in)
+    return model  # Add this line to return the model
 
 
 def predict_hr_attrition(age, distance_from_home, monthly_income, percent_salary_hike, total_working_years, model):
@@ -34,18 +35,18 @@ def main():
     percent_salary_hike = st.number_input("Percent Salary Hike", value=0, min_value=0)
     total_working_years = st.number_input("Total Working Years", value=0, min_value=0)
     
-    result = ""
+    result = None  # Change this line to initialize result as None
     model = load_model()
     
     if st.button("Predict"):
         result = predict_hr_attrition(age, distance_from_home, monthly_income, percent_salary_hike, total_working_years, model)
     
-    st.success(f"The probability of attrition is {result:.2f}%")
+    if result is not None:  # Add this line to only show the output when result is not None
+        st.success(f"The probability of attrition is {result:.2f}%")
     
     if st.button("About"):
         st.text("Let's Learn")
         st.text("Built with Streamlit")
-
 
 if __name__ == '__main__':
     main()
