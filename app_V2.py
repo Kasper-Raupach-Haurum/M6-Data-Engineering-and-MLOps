@@ -1,9 +1,12 @@
-import streamlit as st
-import joblib
+import numpy as np
+import pickle
+import pandas as pd
+import streamlit as st 
+from PIL import Image
 
 def load_model():
-    """Load the trained model for predicting HR attrition."""
-    return joblib.load("model.pkl")
+    pickle_in = open("model.pkl","rb")
+    model=pickle.load(pickle_in)
 
 
 def predict_hr_attrition(age, distance_from_home, monthly_income, percent_salary_hike, total_working_years, model):
